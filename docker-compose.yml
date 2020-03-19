@@ -10,3 +10,8 @@ services:
       - hub
     environment:
       - HUB_HOST=hub
+  tests:
+    image: tests
+    depends_on:
+      - hub
+      - chrome1
