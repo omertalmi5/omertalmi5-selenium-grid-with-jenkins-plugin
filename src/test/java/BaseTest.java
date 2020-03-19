@@ -20,7 +20,9 @@ public class BaseTest {
     public void setupDriver() throws MalformedURLException {
 
         // Default values
-        String host = "localhost";
+        // The ip is the ip of machine docker runs on
+        // find it in docker toolbox with the command : docker-machine ip default
+        String host = "192.168.99.103";
         DesiredCapabilities desiredCapabilities = chrome();
 
         if(getProperty("HUB_HOST") != null)
