@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeTest;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
 import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
 
@@ -17,12 +18,14 @@ public class BaseTest {
 
     @BeforeTest
     public void setupDriver() throws MalformedURLException {
+
+        // Default values
         String host = "localhost";
         DesiredCapabilities desiredCapabilities = chrome();
 
-        if(System.getProperty("HUB_HOST") != null)
+        if(getProperty("HUB_HOST") != null)
         {
-            host = System.getProperty("HUB_HOST");
+            host = getProperty("HUB_HOST");
         }
 
         String completeUrl = "http://" + host + ":4444/wd/hub";
