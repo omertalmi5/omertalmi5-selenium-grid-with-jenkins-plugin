@@ -8,9 +8,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class LoginPage extends AbstractPage {
 
-    private final String PAGE_URL = "http://newtours.demoaut.com/";
+    private final String PAGE_URL = "http://newtours.demoaut.com";
 
-    @FindBy(name = "userName")
+    @FindBy(name = "password")
     private WebElement firstNameTxt;
 
     public LoginPage(WebDriver driver) {
