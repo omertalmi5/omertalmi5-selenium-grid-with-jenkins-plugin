@@ -4,7 +4,7 @@ services:
     image: selenium/hub
     ports:
       - "4444:4444"
-  chrome1:
+  chrome:
     image: selenium/node-chrome
     depends_on:
       - hub
@@ -14,4 +14,4 @@ services:
     image: tests
     depends_on:
       - hub
-      - chrome1
+      - chrome

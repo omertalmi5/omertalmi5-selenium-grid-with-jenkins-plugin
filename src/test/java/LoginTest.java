@@ -9,4 +9,18 @@ public class LoginTest extends BaseTest {
         loginPage.goTo();
         loginPage.login();
     }
+
+    @Test
+    public void loginTest1() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.goTo();
+        loginPage.login();
+    }
+
+    @Test
+    public void loginTest2() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.goTo();
+        loginPage.login();
+    }
 }

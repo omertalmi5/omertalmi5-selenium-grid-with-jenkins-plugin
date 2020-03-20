@@ -11,7 +11,7 @@ docker run imagename
 
 Another option is do it together:
 docker build -t imagename .
-docker-compose up
+docker-compose up --scale chrome=NODES_AMOUNT
 
 In the tutorial he uses jar because he wants ude only jre and not jdk
 because he wants thinner image as much
