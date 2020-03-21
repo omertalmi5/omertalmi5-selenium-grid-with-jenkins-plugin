@@ -6,6 +6,7 @@ pipeline {
             steps {
                 bat 'docker build -t tests .'
                 bat 'echo "Finish build image"'
+                bat 'docker-compose up'
             }
         }
     }
