@@ -4,7 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t tests .'
+                bat 'docker build -t omertalmi5/tests-on-grid .'
+                bat 'echo "Finished build image"'
+                
+                bat 'docker push omertalmi5/tests-on-grid'
+                bat 'echo "Finished push image to dockerhub"'
+
+                bat 'docker-compose up'
             }
         }
     }
