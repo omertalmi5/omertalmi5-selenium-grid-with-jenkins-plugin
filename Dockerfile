@@ -1,6 +1,7 @@
 FROM openjdk
 FROM maven
 
-COPY ./ ./
+COPY ./ /tests
+WORKDIR /tests
 
-CMD mvn test
+CMD ["mvn", "test"]
