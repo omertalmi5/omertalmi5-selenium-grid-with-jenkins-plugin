@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "cool"'
-               // archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                TEST_NAME    = 'tests'
+                sh 'docker build -t ${TEST_NAME} .'
             }
         }
     }
