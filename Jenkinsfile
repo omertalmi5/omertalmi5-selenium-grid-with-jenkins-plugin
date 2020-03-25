@@ -8,9 +8,17 @@ pipeline {
 
                 bat 'docker push omertalmi5/tests-on-grid'
                 bat 'echo "Finished push image to dockerhub"'
-
-                bat "docker-compose up --scale chrome=3"
             }
+        }
+        stage('Test') {
+            steps {
+             bat "docker-compose up --scale chrome=3"
+            }
+        }
+    }
+    post {
+        always {
+            bat "docker-compose down"
         }
     }
 }
